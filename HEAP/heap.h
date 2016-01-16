@@ -6,8 +6,8 @@
 template <typename T>
 class Heap {
   public:
-  	Heap();
-  	virtual ~Heap();
+    Heap();
+    virtual ~Heap();
 
     T getMinimum() { return getMin(); }
     T extractMinimum() {return extractMin(); }
@@ -21,26 +21,26 @@ class Heap {
     bool isHeapEmpty();
     void print();
   protected:
-  	int left(int index) { return 2*index+1; }
+    int left(int index) { return 2*index+1; }
     int right(int index) { return 2*index+2; }
     int parent(int index) { return (index-1)/2; }
     int getCurrentIndex() { return heap_size-1; }
-  	void reallocate();
-  	void swap(T& x, T& y);
+    void reallocate();
+    void swap(T& x, T& y);
 
-  	T *heap_array;
-  	int heap_size;  	
+    T *heap_array;
+    int heap_size;  	
   private:
-  	virtual void increase(int index, int value);
-  	virtual void decrease(int index, int value);
-  	virtual void insert(T key);
-  	virtual void remove(int index);
-  	virtual T getMin();
-  	virtual T extractMin();
-  	virtual T getMax();
-  	virtual T extractMax();
+    virtual void increase(int index, int value);
+    virtual void decrease(int index, int value);
+    virtual void insert(T key);
+    virtual void remove(int index);
+    virtual T getMin();
+    virtual T extractMin();
+    virtual T getMax();
+    virtual T extractMax();
 
-  	int m_maxHeapSize;
+    int m_maxHeapSize;
 };
 
 
