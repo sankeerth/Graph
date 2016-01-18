@@ -107,13 +107,13 @@ void MinHeap<T>::heapify(int index)
 {
 	int minimum = index;
 
-	if (Heap<T>::heap_array[minimum] > Heap<T>::heap_array[Heap<T>::left(index)] &&
-		Heap<T>::left(index) < Heap<T>::heap_size) {
+	if (Heap<T>::left(index) < Heap<T>::heap_size && 
+	    Heap<T>::heap_array[minimum] > Heap<T>::heap_array[Heap<T>::left(index)]) {
 		minimum = Heap<T>::left(index);
 	}
 
-	if (Heap<T>::heap_array[minimum] > Heap<T>::heap_array[Heap<T>::right(index)] && 
-		Heap<T>::right(index) < Heap<T>::heap_size) {
+	if (Heap<T>::right(index) < Heap<T>::heap_size && 
+	    Heap<T>::heap_array[minimum] > Heap<T>::heap_array[Heap<T>::right(index)]) {
 		minimum = Heap<T>::right(index);
 	}
 
